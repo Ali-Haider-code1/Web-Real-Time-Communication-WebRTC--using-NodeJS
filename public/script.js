@@ -88,10 +88,6 @@ const connectToNewUser = (userId, stream) => {
         addVideoStream(video, userVideoStream);
     });
 
-    call.on("error", (err) => {
-        console.error('Call error:', err);
-    });
-
     call.on("close", () => {
         console.log('Call closed');
         video.remove();
